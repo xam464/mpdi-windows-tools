@@ -1,3 +1,3 @@
 # Scripts
 
-powershell -ExecutionPolicy Bypass -File script.ps1
+powershell -ExecutionPolicy Bypass -File '.\Powershell cript.ps1'

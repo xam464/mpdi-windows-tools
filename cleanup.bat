@@ -2,10 +2,10 @@
 :: Request admin privileges
 :: Run this script as administrator
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if '%errorlevel%' NEQ '0' (
+if not "%errorlevel%"=="0" (
     echo Requesting administrative privileges...
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
-    exit /b
+    goto :eof
 )
 
 :: Execute PowerShell script

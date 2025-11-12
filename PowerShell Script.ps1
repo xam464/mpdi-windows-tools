@@ -1,4 +1,7 @@
-﻿#set Search icon only (To select the “Search icon only” option the value is 1, use 2 for the “Search box,” and 3 for the “Search button” option.)
+﻿#Set Execution Policy to bypass security restrictions
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+
+#set Search icon only (To select the "Search icon only" option the value is 1, use 2 for the "Search box," and 3 for the "Search button" option.)
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name SearchBoxTaskbarMode -Value 1 -Type DWord -Force
 
 #Hide taskview button
@@ -46,7 +49,7 @@ Get-AppxPackage *WindowsAlarms* | Remove-AppxPackage
 #remove Music app
 Get-AppxPackage *ZuneMusic* | Remove-AppxPackage
 #remove 3d-viewer
-Get-AppxPackage -allusers Microsoft.Microsoft3DViewer* | Remove-AppxPackag
+Get-AppxPackage -allusers Microsoft.Microsoft3DViewer* | Remove-AppxPackage
 #Remove sticky notes:
 Get-AppxPackage -allusers Microsoft.MicrosoftStickyNotes* | Remove-AppxPackage
 #Remove Mixed Reality Portal
